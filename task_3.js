@@ -45,6 +45,11 @@ async function renderAlbums(url) {
     albums.forEach(el => {
       container.append(createList(el.title))
     })
+  }catch (error) {
+    errorMessage(container)
+    console.error(error)
+  } finally {
+    loading()
   }
 }
 
